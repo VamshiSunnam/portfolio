@@ -1,0 +1,188 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const data = {
+        kpis: {
+            chartLabels: ['Network Latency', 'Query Performance', 'Process Efficiency', 'Overdue Payments', 'Forecasting Accuracy'],
+            chartData: [25, 30, 20, 15, 25]
+        },
+        experience: [
+            {
+                role: 'Data Engineer',
+                company: 'Salient Global Technologies',
+                date: 'Jan 2024 - Present',
+                details: [
+                    'Designed and implemented scalable ETL pipelines using Apache Airflow and Python, processing over 10TB+ of daily data.',
+                    'Deployed and optimized real-time data workflows on AWS, Azure, Snowflake, and OpenStack, reducing network latency by 25%.',
+                    'Automated data extraction and transformation using Linux shell scripting and Cisco APIs, saving 15 hours per week.',
+                    'Managed and optimized SQL and NoSQL databases (MySQL, MongoDB), improving query performance by 30%.'
+                ]
+            },
+            {
+                role: 'Business Intelligence Analyst',
+                company: 'High Radius',
+                date: 'Jan 2021 - Dec 2022',
+                details: [
+                    'Developed interactive dashboards using Tableau and Power BI to track financial KPIs, reducing reporting time by 30%.',
+                    'Built and optimized SQL-based data models from ERP systems (SAP, Oracle), improving process efficiency by 20%.',
+                    'Applied predictive analytics using Python to forecast financial outcomes, reducing overdue payments by 15%.',
+                    'Designed automated workflows using Alteryx and advanced Excel, saving 10 hours weekly.'
+                ]
+            }
+        ],
+        skills: [
+            { name: 'Python', category: 'Languages' }, { name: 'Java', category: 'Languages' }, { name: 'SQL', category: 'Languages' },
+            { name: 'MySQL', category: 'Databases' }, { name: 'Oracle', category: 'Databases' }, { name: 'PostgreSQL', category: 'Databases' }, { name: 'MongoDB', category: 'Databases' }, { name: 'Snowflake', category: 'Databases' },
+            { name: 'AWS', category: 'Cloud' }, { name: 'Azure', category: 'Cloud' }, { name: 'GCP', category: 'Cloud' }, { name: 'Databricks', category: 'Cloud' },
+            { name: 'Power BI', category: 'BI' }, { name: 'Tableau', category: 'BI' }, { name: 'Excel', category: 'BI' },
+            { name: 'ETL', category: 'Data Engineering' }, { name: 'Airflow', category: 'Data Engineering' }, { name: 'Alteryx', category: 'Data Engineering' },
+            { name: 'Scikit-learn', category: 'ML' }, { name: 'Keras', category: 'ML' }, { name: 'TensorFlow', category: 'ML' }, { name: 'SageMaker', category: 'ML' }
+        ],
+        projects: [
+            {
+                title: 'Credit Card Fraud Detection',
+                description: 'Developed a machine learning model to detect fraudulent credit card transactions with high accuracy, utilizing various classification algorithms and feature engineering techniques.',
+                tools: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib', 'Jupyter'],
+                url: 'https://github.com/VamshiSunnam/Credit-Card-Fraud-Detection'
+            },
+            {
+                title: 'Customer Churn Prediction',
+                description: 'Built a predictive model to identify customers likely to churn. This project involved data preprocessing, exploratory data analysis, and model evaluation to help businesses retain customers.',
+                tools: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn', 'Seaborn'],
+                url: 'https://github.com/VamshiSunnam/Customer-Churn-Prediction'
+            },
+            {
+                title: 'Big Data Analysis with PySpark',
+                description: 'Engineered a data processing pipeline using PySpark for large-scale data analysis. This project demonstrates skills in distributed computing and handling big data efficiently.',
+                tools: ['Python', 'PySpark', 'SQL', 'Big Data', 'Data Analysis'],
+                url: 'https://github.com/VamshiSunnam/BigData-PySpark-Analysis'
+            }
+        ]
+    };
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const ctx = document.getElementById('impactChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data.kpis.chartLabels,
+            datasets: [{
+                label: '% Improvement',
+                data: data.kpis.chartData,
+                backgroundColor: 'rgba(37, 99, 235, 0.6)',
+                borderColor: 'rgba(37, 99, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true, grid: { color: 'rgba(0, 0, 0, 0.05)' } },
+                x: { grid: { display: false } }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.raw}%`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    const timelineContainer = document.getElementById('experience-timeline');
+    data.experience.forEach(exp => {
+        const item = document.createElement('div');
+        item.className = 'timeline-item relative pl-8 pb-8';
+        item.innerHTML = `
+            <div class="timeline-dot absolute w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
+            <div class="cursor-pointer group">
+                <p class="text-sm text-gray-500">${exp.date}</p>
+                <h3 class="text-xl font-bold text-gray-800 group-hover:accent-color">${exp.role}</h3>
+                <p class="font-semibold text-gray-600">${exp.company}</p>
+                <div class="details hidden mt-2 text-gray-600 space-y-1">
+                    ${exp.details.map(d => `<div>• ${d}</div>`).join('')}
+                </div>
+            </div>
+        `;
+        timelineContainer.appendChild(item);
+    });
+
+    timelineContainer.addEventListener('click', function(e) {
+        const target = e.target.closest('.group');
+        if (target) {
+            const details = target.querySelector('.details');
+            details.classList.toggle('hidden');
+        }
+    });
+    
+    const skillFiltersContainer = document.getElementById('skill-filters');
+    const skillGridContainer = document.getElementById('skill-grid');
+    const categories = ['All', ...new Set(data.skills.map(s => s.category))];
+    
+    categories.forEach(category => {
+        const button = document.createElement('button');
+        button.textContent = category;
+        button.className = 'skill-filter-btn px-4 py-2 text-sm font-medium rounded-full transition';
+        if (category === 'All') {
+            button.classList.add('accent-bg', 'text-white');
+        } else {
+            button.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+        }
+        button.dataset.category = category;
+        skillFiltersContainer.appendChild(button);
+    });
+
+    const renderSkills = (filter = 'All') => {
+        skillGridContainer.innerHTML = '';
+        const filteredSkills = filter === 'All' ? data.skills : data.skills.filter(s => s.category === filter);
+        filteredSkills.forEach(skill => {
+            const skillEl = document.createElement('div');
+            skillEl.className = 'warm-neutral-card p-4 text-center rounded-lg shadow-sm hover:shadow-md transition';
+            skillEl.textContent = skill.name;
+            skillGridContainer.appendChild(skillEl);
+        });
+    };
+
+    skillFiltersContainer.addEventListener('click', e => {
+        if (e.target.tagName === 'BUTTON') {
+            const category = e.target.dataset.category;
+            document.querySelectorAll('.skill-filter-btn').forEach(btn => {
+                btn.classList.remove('accent-bg', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+            });
+            e.target.classList.add('accent-bg', 'text-white');
+            e.target.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+            renderSkills(category);
+        }
+    });
+
+    renderSkills();
+
+    const projectGallery = document.getElementById('project-gallery');
+    data.projects.forEach(project => {
+        const cardLink = document.createElement('a');
+        cardLink.href = project.url;
+        cardLink.target = '_blank';
+        cardLink.rel = 'noopener noreferrer';
+        cardLink.className = 'block warm-neutral-card rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+        
+        cardLink.innerHTML = `
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">${project.title}</h3>
+                <p class="text-gray-600 mb-4">${project.description}</p>
+                <div class="flex flex-wrap gap-2">
+                    ${project.tools.map(tool => `<span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full subtle-accent-bg text-blue-600">${tool}</span>`).join('')}
+                </div>
+            </div>
+        `;
+        projectGallery.appendChild(cardLink);
+    });
+});

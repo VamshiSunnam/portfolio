@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamshi Sunnam | Interactive Data Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="warm-neutral-bg">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl accent-color">Vamshi Sunnam</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#dashboard" class="text-gray-600 hover:accent-color px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="#timeline" class="text-gray-600 hover:accent-color px-3 py-2 rounded-md text-sm font-medium">Timeline</a>
+                        <a href="#skills" class="text-gray-600 hover:accent-color px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#projects" class="text-gray-600 hover:accent-color px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#dashboard" class="text-gray-600 hover:accent-color block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+                <a href="#timeline" class="text-gray-600 hover:accent-color block px-3 py-2 rounded-md text-base font-medium">Timeline</a>
+                <a href="#skills" class="text-gray-600 hover:accent-color block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:accent-color block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="py-20 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">Driving Business Outcomes with Data</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">Certified Data Engineer with 4+ years of experience transforming complex datasets into actionable intelligence. Specializing in scalable data platforms, ETL pipelines, and cloud analytics to boost efficiency and drive innovation.</p>
+            </div>
+        </section>
+
+        <section id="dashboard" class="py-16 subtle-accent-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Career Impact Dashboard</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">This dashboard provides a high-level overview of key performance indicators and achievements from my career, showcasing the tangible impact of data-driven solutions on operational efficiency, cost reduction, and performance optimization.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div class="warm-neutral-card p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl font-extrabold accent-color">35%</div>
+                        <p class="mt-2 text-lg font-medium text-gray-700">Operational Efficiency Gain</p>
+                    </div>
+                    <div class="warm-neutral-card p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl font-extrabold accent-color">25%</div>
+                        <p class="mt-2 text-lg font-medium text-gray-700">Cost Reduction</p>
+                    </div>
+                    <div class="warm-neutral-card p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl font-extrabold accent-color">30%</div>
+                        <p class="mt-2 text-lg font-medium text-gray-700">Faster Reporting Cycles</p>
+                    </div>
+                    <div class="warm-neutral-card p-6 rounded-lg shadow-md text-center">
+                        <div class="text-5xl font-extrabold accent-color">10TB+</div>
+                        <p class="mt-2 text-lg font-medium text-gray-700">Data Processed Daily</p>
+                    </div>
+                </div>
+                <div class="warm-neutral-card p-6 rounded-lg shadow-md">
+                     <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Performance Improvements by Area</h3>
+                     <p class="text-center text-gray-600 max-w-2xl mx-auto mb-6">Interact with the chart below to see percentage improvements across different domains. Hover over the bars to view precise metrics achieved through optimized data workflows and analytics.</p>
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Interactive Career Timeline</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Explore my professional journey by clicking on each role. This interactive timeline highlights my key responsibilities and accomplishments at each stage, demonstrating a consistent track record of growth and impact in data engineering and business intelligence.</p>
+                <div id="experience-timeline" class="relative"></div>
+            </div>
+        </section>
+        
+        <section id="skills" class="py-16 subtle-accent-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Skills Dashboard</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">This dashboard provides an interactive way to explore my technical skill set. Click the buttons below to filter skills by category and see my proficiency across various technologies, from cloud platforms to machine learning frameworks.</p>
+                <div id="skill-filters" class="flex flex-wrap justify-center gap-2 mb-8"></div>
+                <div id="skill-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Project Showcase</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Here are some of the key projects from my GitHub profile. Each project demonstrates the practical application of my skills in solving real-world business problems, from detecting financial fraud to predicting customer behavior.</p>
+                <div id="project-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Vamshi Sunnam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
