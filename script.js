@@ -1,113 +1,139 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // --- DATA ---
+    // --- PORTFOLIO DATA ---
     const portfolioData = {
         experience: [
             {
                 role: 'Data Engineer',
                 company: 'Salient Global Technologies',
                 date: 'Jan 2024 - Present',
-                description: 'Designed and implemented scalable ETL pipelines using Apache Airflow, processing over 10TB+ of daily data and optimizing real-time workflows on AWS, Azure, and Snowflake.'
+                points: [
+                    'Designed and implemented scalable ETL pipelines using Apache Airflow and Python, processing over 10TB+ of daily data.',
+                    'Deployed and optimized real-time data workflows on AWS, Azure, Snowflake, and OpenStack, reducing network latency by 25%.',
+                    'Automated data extraction and transformation using Linux shell scripting and Cisco APIs, saving 15 hours per week.',
+                    'Managed and optimized SQL and NoSQL databases (MySQL, MongoDB), improving query performance by 30%.'
+                ]
             },
             {
                 role: 'Business Intelligence Analyst',
                 company: 'High Radius',
                 date: 'Jan 2021 - Dec 2022',
-                description: 'Developed interactive dashboards using Tableau and Power BI to track financial KPIs, reducing reporting time by 30%. Built and optimized SQL-based data models from ERP systems.'
+                points: [
+                    'Developed interactive dashboards using Tableau and Power BI to track financial KPIs, reducing reporting time by 30%.',
+                    'Built and optimized SQL-based data models from ERP systems (SAP, Oracle), improving process efficiency by 20%.',
+                    'Applied predictive analytics using Python to forecast financial outcomes, reducing overdue payments by 15%.',
+                ]
             }
         ],
         projects: [
             {
                 title: 'Credit Card Fraud Detection',
-                description: 'Developed a machine learning model to detect fraudulent credit card transactions with high accuracy.',
-                tools: ['Python', 'Scikit-learn', 'Pandas'],
+                description: 'Developed a machine learning model to detect fraudulent credit card transactions with high accuracy, utilizing various classification algorithms and feature engineering techniques.',
+                tools: ['Python', 'Scikit-learn', 'Pandas', 'Matplotlib'],
                 url: 'https://github.com/VamshiSunnam/Credit-Card-Fraud-Detection'
             },
             {
                 title: 'Customer Churn Prediction',
-                description: 'Built a predictive model to identify customers likely to churn, involving data preprocessing and model evaluation.',
-                tools: ['Python', 'TensorFlow', 'Keras'],
+                description: 'Built a predictive model to identify customers likely to churn. This project involved data preprocessing, exploratory data analysis, and model evaluation to help businesses retain customers.',
+                tools: ['Python', 'TensorFlow', 'Keras', 'Seaborn'],
                 url: 'https://github.com/VamshiSunnam/Customer-Churn-Prediction'
             },
             {
                 title: 'Big Data Analysis with PySpark',
-                description: 'Engineered a data processing pipeline using PySpark for large-scale data analysis and distributed computing.',
-                tools: ['PySpark', 'SQL', 'Big Data'],
+                description: 'Engineered a data processing pipeline using PySpark for large-scale data analysis. This project demonstrates skills in distributed computing and handling big data efficiently.',
+                tools: ['Python', 'PySpark', 'SQL', 'Big Data'],
                 url: 'https://github.com/VamshiSunnam/BigData-PySpark-Analysis'
             }
         ],
-        skills: [
-            'Python', 'Java', 'SQL', 'MySQL', 'MongoDB', 'Snowflake', 'AWS', 'Azure', 'GCP', 'Databricks', 'Power BI', 'Tableau', 'ETL', 'Airflow', 'Scikit-learn', 'TensorFlow'
-        ]
+        skills: {
+            "Languages & Databases": ["Python", "Java", "SQL", "MySQL", "Oracle", "PostgreSQL", "MongoDB", "Snowflake"],
+            "Cloud & Platforms": ["AWS", "Azure", "GCP", "Databricks", "OpenStack"],
+            "Data Engineering & BI": ["ETL", "Apache Airflow", "Power BI", "Tableau", "Alteryx", "Excel"],
+            "Machine Learning": ["Scikit-learn", "Keras", "TensorFlow", "AWS SageMaker"]
+        }
     };
 
-    // --- TYPING ANIMATION ---
+    // --- INITIALIZE ANIMATIONS ---
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+
     new Typed('#typing-animation', {
-        strings: ['Data Engineer', 'BI Analyst', 'Cloud Specialist', 'Problem Solver'],
-        typeSpeed: 50,
-        backSpeed: 30,
+        strings: ['Data Platforms.', 'ETL Pipelines.', 'Cloud Analytics.', 'Actionable Insights.'],
+        typeSpeed: 60,
+        backSpeed: 40,
         loop: true,
         smartBackspace: true,
-    });
-
-    // --- RENDER DYNAMIC CONTENT ---
-    const experienceContainer = document.getElementById('experience-container');
-    portfolioData.experience.forEach(exp => {
-        const expCard = document.createElement('div');
-        expCard.className = 'experience-card';
-        expCard.innerHTML = `
-            <div class="flex justify-between items-center mb-2">
-                <h3 class="text-xl font-bold">${exp.role}</h3>
-                <p class="text-sm text-gray-500">${exp.date}</p>
-            </div>
-            <p class="font-semibold text-blue-600 mb-2">${exp.company}</p>
-            <p class="text-gray-600">${exp.description}</p>
-        `;
-        experienceContainer.appendChild(expCard);
-    });
-
-    const projectContainer = document.getElementById('project-container');
-    portfolioData.projects.forEach(proj => {
-        const projCard = document.createElement('a');
-        projCard.href = proj.url;
-        projCard.target = '_blank';
-        projCard.rel = 'noopener noreferrer';
-        projCard.className = 'project-card';
-        projCard.innerHTML = `
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">${proj.title}</h3>
-                <p class="text-gray-600 mb-4">${proj.description}</p>
-                <div class="flex flex-wrap gap-2">
-                    ${proj.tools.map(tool => `<span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-gray-200 text-gray-800">${tool}</span>`).join('')}
-                </div>
-            </div>
-        `;
-        projectContainer.appendChild(projCard);
-    });
-
-    const skillsContainer = document.getElementById('skills-container');
-    portfolioData.skills.forEach(skill => {
-        const skillBadge = document.createElement('div');
-        skillBadge.className = 'skill-badge';
-        skillBadge.textContent = skill;
-        skillsContainer.appendChild(skillBadge);
-    });
-    
-    // --- MOBILE MENU ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
     });
 
     // --- HEADER SCROLL EFFECT ---
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.classList.add('py-2');
-            header.classList.remove('py-4');
+            header.classList.add('scrolled');
         } else {
-            header.classList.add('py-4');
-            header.classList.remove('py-2');
+            header.classList.remove('scrolled');
         }
     });
+    
+    // --- MOBILE MENU TOGGLE ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // --- DYNAMIC CONTENT RENDERING ---
+    const experienceContainer = document.getElementById('experience-container');
+    portfolioData.experience.forEach(exp => {
+        const item = document.createElement('div');
+        item.className = 'timeline-item relative pl-8 pb-10';
+        item.innerHTML = `
+            <h3 class="text-xl font-bold text-slate-800">${exp.role} @ <span class="text-blue-600">${exp.company}</span></h3>
+            <p class="text-sm text-slate-500 mb-3">${exp.date}</p>
+            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                ${exp.points.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+        `;
+        experienceContainer.appendChild(item);
+    });
+
+    const projectContainer = document.getElementById('project-container');
+    portfolioData.projects.forEach(proj => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.setAttribute('data-aos', 'fade-up');
+        card.innerHTML = `
+            <div class="project-card-content">
+                <div class="flex justify-between items-center mb-4">
+                    <i class="far fa-folder-open text-3xl text-blue-500"></i>
+                    <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="text-2xl text-slate-400 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">${proj.title}</h3>
+                <p class="text-slate-600 flex-grow mb-4">${proj.description}</p>
+                <div class="flex flex-wrap gap-2 text-sm text-slate-500">
+                    ${proj.tools.map(tool => `<span>${tool}</span>`).join('')}
+                </div>
+            </div>
+        `;
+        projectContainer.appendChild(card);
+    });
+
+    const skillsContainer = document.getElementById('skills-container');
+    for (const [category, skills] of Object.entries(portfolioData.skills)) {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'mb-8';
+        categoryDiv.innerHTML = `
+            <h3 class="skill-category-title">${category}</h3>
+            <div class="flex flex-wrap gap-3">
+                ${skills.map(skill => `<div class="skill-badge">${skill}</div>`).join('')}
+            </div>
+        `;
+        skillsContainer.appendChild(categoryDiv);
+    }
 });
