@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vamshi Sunnam | Data Engineer</title>
+    <title>Vamshi Sunnam | Data Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-700">
 
     <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">Vamshi Sunnam</a>
-            <div class="hidden md:flex space-x-6 items-center">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-blue-600 tracking-tight">VS</a>
+            <div class="hidden md:flex space-x-8 items-center">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
@@ -26,81 +27,131 @@
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-200">About</a>
-            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-gray-200">Experience</a>
-            <a href="#projects" class="block py-2 px-6 text-sm hover:bg-gray-200">Projects</a>
-            <a href="#skills" class="block py-2 px-6 text-sm hover:bg-gray-200">Skills</a>
-            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-200">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+             <a href="#about" class="mobile-nav-link">About</a>
+             <a href="#experience" class="mobile-nav-link">Experience</a>
+             <a href="#projects" class="mobile-nav-link">Projects</a>
+             <a href="#skills" class="mobile-nav-link">Skills</a>
+             <a href="#contact" class="mobile-nav-link">Contact</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <img src="https://placehold.co/150x150/E2E8F0/4A5568?text=VS" alt="Vamshi Sunnam" class="w-40 h-40 mx-auto rounded-full shadow-xl mb-6">
-                <h1 class="text-4xl md:text-6xl font-bold mb-2">Hi, I'm Vamshi Sunnam</h1>
-                <p class="text-xl md:text-2xl text-gray-600">I'm a <span id="typing-animation" class="text-blue-600 font-semibold"></span></p>
+        <section id="hero" class="min-h-screen flex items-center">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <p class="text-lg text-blue-600 font-medium" data-aos="fade-up">Hi, my name is</p>
+                    <h1 class="text-5xl md:text-7xl font-extrabold my-3 text-slate-900" data-aos="fade-up" data-aos-delay="100">Vamshi Sunnam.</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-slate-500" data-aos="fade-up" data-aos-delay="200">I build solutions with <span id="typing-animation"></span></h2>
+                    <p class="max-w-2xl mt-6 text-lg text-slate-600" data-aos="fade-up" data-aos-delay="300">
+                        I'm a certified Data Engineer based in Frisco, TX, with a passion for transforming complex data into actionable insights. I specialize in building scalable data platforms, robust ETL pipelines, and leveraging cloud analytics to drive business innovation.
+                    </p>
+                    <a href="mailto:vamshisunnam@gmail.com" class="inline-block cta-button mt-10" data-aos="fade-up" data-aos-delay="400">Get In Touch</a>
+                </div>
             </div>
         </section>
 
         <!-- About Me -->
-        <section id="about" class="py-20">
+        <section id="about" class="py-24">
             <div class="container mx-auto px-6">
-                <h2 class="section-heading">About Me</h2>
-                <p class="max-w-3xl mx-auto text-center text-lg text-gray-600">
-                    Certified Data Engineer with 4+ years of experience transforming complex datasets into actionable intelligence. I specialize in building scalable data platforms, robust ETL pipelines, and leveraging cloud analytics to boost efficiency and drive innovation.
-                </p>
+                 <h2 class="section-heading" data-aos="fade-up">About Me</h2>
+                 <div class="grid md:grid-cols-5 gap-10 items-center">
+                     <div class="md:col-span-3 text-lg text-slate-600 space-y-4" data-aos="fade-right">
+                         <p>Hello! I'm Vamshi, a data professional with a Master's in Business Analytics from the University of Texas at Dallas. My journey into the world of data began with a fascination for uncovering patterns and stories hidden within numbers.</p>
+                         <p>Today, I channel that passion at Salient Global Technologies, where I design and implement scalable ETL pipelines, processing terabytes of data daily. I thrive on optimizing data workflows across cloud platforms like AWS, Azure, and Snowflake to enhance performance and reduce costs.</p>
+                         <p>Before my current role, I honed my skills as a Business Intelligence Analyst at High Radius, where I developed dashboards that provided crucial insights to stakeholders and applied predictive analytics to solve real-world financial challenges.</p>
+                     </div>
+                     <div class="md:col-span-2" data-aos="fade-left">
+                         <div class="p-1 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                             <img src="https://placehold.co/400x400/E2E8F0/4A5568?text=VS" alt="Vamshi Sunnam" class="rounded-lg">
+                         </div>
+                     </div>
+                 </div>
             </div>
         </section>
 
         <!-- Experience -->
-        <section id="experience" class="py-20 bg-white">
+        <section id="experience" class="py-24 bg-slate-100">
             <div class="container mx-auto px-6">
-                <h2 class="section-heading">Experience</h2>
-                <div id="experience-container" class="max-w-3xl mx-auto"></div>
+                <h2 class="section-heading" data-aos="fade-up">Work Experience</h2>
+                <div id="experience-container" class="max-w-3xl mx-auto relative border-l-2 border-slate-200" data-aos="fade-up"></div>
             </div>
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="py-20">
+        <section id="projects" class="py-24">
             <div class="container mx-auto px-6">
-                <h2 class="section-heading">Projects</h2>
-                <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <h2 class="section-heading" data-aos="fade-up">Things I've Built</h2>
+                <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
 
         <!-- Skills -->
-        <section id="skills" class="py-20 bg-white">
+        <section id="skills" class="py-24 bg-slate-100">
             <div class="container mx-auto px-6">
-                <h2 class="section-heading">Skills</h2>
-                <div id="skills-container" class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4"></div>
+                <h2 class="section-heading" data-aos="fade-up">My Toolbox</h2>
+                <div id="skills-container" class="max-w-4xl mx-auto" data-aos="fade-up"></div>
+            </div>
+        </section>
+        
+        <!-- Education & Certifications -->
+        <section id="education" class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="section-heading" data-aos="fade-up">Education & Certifications</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-4 text-slate-800">Education</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xl font-semibold">MS in Business Analytics</h4>
+                                <p class="text-blue-600">The University of Texas at Dallas</p>
+                                <p class="text-sm text-slate-500">Aug 2022 - May 2023</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold">Bachelor of Technology in ECE</h4>
+                                <p class="text-blue-600">Jawaharlal Nehru Technological University</p>
+                                <p class="text-sm text-slate-500">Aug 2016 - May 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-4 text-slate-800">Certifications</h3>
+                        <div class="space-y-4">
+                            <p class="text-lg"><i class="fas fa-certificate text-blue-500 mr-2"></i>AWS Certified Solutions Architect – Associate</p>
+                            <p class="text-lg"><i class="fas fa-certificate text-blue-500 mr-2"></i>Microsoft Certified: Azure Data Fundamentals</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+
         <!-- Contact -->
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-heading">Get In Touch</h2>
-                <p class="text-lg text-gray-600 mb-8">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
-                <div class="flex justify-center items-center space-x-6 text-3xl">
-                    <a href="https://github.com/VamshiSunnam" target="_blank" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
-                    <a href="mailto:your-email@example.com" class="text-gray-500 hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
+        <section id="contact" class="py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-blue-600" data-aos="fade-up">What's Next?</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 my-4" data-aos="fade-up" data-aos-delay="100">Get In Touch</h3>
+                <p class="max-w-xl mx-auto text-lg text-slate-600 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    I'm currently seeking new opportunities and am always open to a conversation. Whether you have a question or just want to say hi, my inbox is always open!
+                </p>
+                <div class="flex justify-center items-center space-x-6 text-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://github.com/VamshiSunnam" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vamshisunnam/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:vamshisunnam@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Vamshi Sunnam. All Rights Reserved.</p>
+    <footer class="bg-slate-800 text-slate-400 py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>Designed & Built by Vamshi Sunnam</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
