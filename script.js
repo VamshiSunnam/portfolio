@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Big Data Analysis with PySpark',
                 description: 'Engineered a data processing pipeline using PySpark for large-scale data analysis. This project demonstrates skills in distributed computing and handling big data efficiently.',
                 tools: ['Python', 'PySpark', 'SQL', 'Big Data'],
-                url: 'https://github.com/VamshiSunnam/BigData-PySpark-Analysis'
+                url: 'https://github.com/VamshiSunnam/Big-Data-Analysis-with-PySpark'
             }
         ],
         skills: {
