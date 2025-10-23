@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         experience: [
             {
                 role: 'Data Engineer',
-                company: 'Salient Global Technologies',
+                company: 'XXXXXXXXXXXXXXXX',
                 date: 'Jan 2024 - Present',
                 points: [
                     'Designed and implemented scalable ETL pipelines using Apache Airflow and Python, processing over 10TB+ of daily data.',
