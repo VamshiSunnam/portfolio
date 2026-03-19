@@ -3,16 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const portfolioData = {
         experience: [
             {
-                role: 'Technical Systems Analyst',
+                role: 'AI/ML Engineer',
                 company: 'Salient Global Technologies',
                 date: 'Aug 2025 – Present',
                 points: [
-                    'Installed and configured Raspberry Pi devices, establishing robust networked operations and testing environments for critical system deployments.',
-                    'Executed comprehensive LTE dongle and Ethernet connectivity checks, ensuring seamless network integration and verifying IP link integrity.',
-                    'Managed SSH/VNC remote access for system administration, facilitating efficient troubleshooting and maintenance of distributed devices.',
-                    'Supported server boot processes and intricate network configurations, including SFP port verification and switchboard light diagnostics to maintain optimal system uptime.',
-                    'Collaborated with IT leadership to meticulously document infrastructure mappings and connectivity results, enhancing system transparency and future planning.',
-                    'Developed and implemented Python and SQL scripts to process device-generated data, enabling internal performance analysis and operational insights.'
+                    'Designing, developing, and deploying machine learning models and scalable data pipelines to drive business innovation.',
+                    'Leveraging Python-based ML frameworks including TensorFlow, Scikit-learn, and PyTorch for predictive modeling and data preprocessing.',
+                    'Building end-to-end ML pipelines and deploying models on cloud platforms such as AWS and Azure.',
+                    'Collaborating with cross-functional teams to deliver AI-driven solutions that improve business outcomes.',
+                    'Optimizing model performance and scalability to handle large structured and unstructured datasets.'
                 ]
             },
             {
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     new Typed('#typing-animation', {
-        strings: ['Data Platforms.', 'ETL Pipelines.', 'Cloud Analytics.', 'Actionable Insights.'],
+        strings: ['AI Solutions.', 'ML Pipelines.', 'Predictive Models.', 'Intelligent Systems.'],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
