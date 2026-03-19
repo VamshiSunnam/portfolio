@@ -3,24 +3,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const portfolioData = {
         experience: [
             {
-                role: 'Data Engineer',
-                company: 'XXXXXXXXXXXXXXXX',
-                date: 'Jan 2024 - Present',
+                role: 'Technical Systems Analyst',
+                company: 'Salient Global Technologies',
+                date: 'Aug 2025 – Present',
                 points: [
-                    'Designed and implemented scalable ETL pipelines using Apache Airflow and Python, processing over 10TB+ of daily data.',
-                    'Deployed and optimized real-time data workflows on AWS, Azure, Snowflake, and OpenStack, reducing network latency by 25%.',
-                    'Automated data extraction and transformation using Linux shell scripting and Cisco APIs, saving 15 hours per week.',
-                    'Managed and optimized SQL and NoSQL databases (MySQL, MongoDB), improving query performance by 30%.'
+                    'Installed and configured Raspberry Pi devices, establishing robust networked operations and testing environments for critical system deployments.',
+                    'Executed comprehensive LTE dongle and Ethernet connectivity checks, ensuring seamless network integration and verifying IP link integrity.',
+                    'Managed SSH/VNC remote access for system administration, facilitating efficient troubleshooting and maintenance of distributed devices.',
+                    'Supported server boot processes and intricate network configurations, including SFP port verification and switchboard light diagnostics to maintain optimal system uptime.',
+                    'Collaborated with IT leadership to meticulously document infrastructure mappings and connectivity results, enhancing system transparency and future planning.',
+                    'Developed and implemented Python and SQL scripts to process device-generated data, enabling internal performance analysis and operational insights.'
                 ]
             },
             {
                 role: 'Business Intelligence Analyst',
                 company: 'High Radius',
-                date: 'Jan 2021 - Dec 2022',
+                date: 'Jan 2021 – Dec 2022',
                 points: [
-                    'Developed interactive dashboards using Tableau and Power BI to track financial KPIs, reducing reporting time by 30%.',
-                    'Built and optimized SQL-based data models from ERP systems (SAP, Oracle), improving process efficiency by 20%.',
-                    'Applied predictive analytics using Python to forecast financial outcomes, reducing overdue payments by 15%.',
+                    'Designed and developed interactive dashboards using Power BI and Tableau, monitoring key performance indicators (KPIs) such as Days Sales Outstanding (DSO) and Cash Conversion Cycle (CCC), which reduced reporting time by 30% and significantly improved business visibility for stakeholders.',
+                    'Optimized ERP-based SQL data models sourced from SAP and Oracle systems, resulting in a 20% improvement in collections efficiency and a measurable reduction in credit risk exposure.',
+                    'Implemented predictive analytics models in Python to forecast blocked orders, leading to a 15% reduction in overdue payments and strengthening cash flow predictability.',
+                    'Automated recurring reporting processes utilizing Alteryx and Excel macros, streamlining month-end close activities and saving over 10 hours weekly in manual effort.',
+                    'Partnered cross-functionally with finance and sales teams to translate complex business requirements into actionable BI insights, thereby enhancing Order-to-Cash operations and overall decision-making effectiveness.'
                 ]
             }
         ],
@@ -45,10 +49,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         ],
         skills: {
-            "Languages & Databases": ["Python", "Java", "SQL", "MySQL", "Oracle", "PostgreSQL", "MongoDB", "Snowflake"],
-            "Cloud & Platforms": ["AWS", "Azure", "GCP", "Databricks", "OpenStack"],
-            "Data Engineering & BI": ["ETL", "Apache Airflow", "Power BI", "Tableau", "Alteryx", "Excel"],
-            "Machine Learning": ["Scikit-learn", "Keras", "TensorFlow", "AWS SageMaker"]
+            "Programming & Scripting": ["Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras)", "Java", "SQL (PostgreSQL, MySQL, Oracle)", "PySpark", "Shell Scripting"],
+            "Data Engineering & ETL": ["Apache Airflow", "Azure Data Factory (ADF)", "Databricks", "AWS Glue", "dbt", "ETL/ELT", "Data Warehousing", "Data Lake", "Data Streaming"],
+            "Cloud Platforms": ["AWS (S3, Redshift, EC2, Lambda, SageMaker, Glue)", "Azure (ADF, Synapse Analytics, Blob Storage, Data Lake Storage)", "GCP (BigQuery, Dataproc)"],
+            "Databases & Storage": ["Snowflake", "PostgreSQL", "MySQL", "Oracle", "MongoDB", "DynamoDB"],
+            "Big Data Technologies": ["Apache Spark", "Apache Kafka", "Hadoop"],
+            "Machine Learning & AI": ["Predictive Analytics", "Time Series Forecasting", "LLM Operations", "MLOps", "Feature Engineering", "Model Evaluation"],
+            "DevOps & Infrastructure": ["Docker", "Kubernetes", "Terraform", "CI/CD (GitHub Actions, Jenkins)", "Git"],
+            "Business Intelligence & Visualization": ["Power BI", "Tableau", "Microsoft Excel (Advanced Functions, PivotTables, Charts)"],
+            "Concepts": ["Data Modeling (Dimensional, Relational)", "Query Optimization", "Automation", "Data Integrity", "Agile/Scrum Methodologies"]
         }
     };
 
