@@ -3,31 +3,60 @@ document.addEventListener('DOMContentLoaded', function () {
     const portfolioData = {
         experience: [
             {
-                role: 'AI/ML Engineer',
-                company: 'Salient Global Technologies',
-                date: 'Aug 2025 – Present',
+                role: 'Senior Data Scientist',
+                company: 'Giant Eagle, Inc.',
+                date: 'Aug 2024 – Present',
                 points: [
-                    'Designing, developing, and deploying machine learning models and scalable data pipelines to drive business innovation.',
-                    'Leveraging Python-based ML frameworks including TensorFlow, Scikit-learn, and PyTorch for predictive modeling and data preprocessing.',
-                    'Building end-to-end ML pipelines and deploying models on cloud platforms such as AWS and Azure.',
-                    'Collaborating with cross-functional teams to deliver AI-driven solutions that improve business outcomes.',
-                    'Optimizing model performance and scalability to handle large structured and unstructured datasets.'
+                    'Built and deployed scalable end-to-end machine learning pipelines in Databricks, enabling personalized marketing and data-driven decision-making across large-scale customer datasets.',
+                    'Developed and deployed CLV and churn prediction models using XGBoost, LightGBM, and Random Forest, driving a 15% increase in customer lifetime value and an 18% improvement in retention targeting.',
+                    'Designed and automated ETL workflows with Apache Airflow to integrate data from POS systems, marketing platforms, and external APIs, improving data freshness and pipeline reliability by 25%.',
+                    'Optimized Snowflake data warehouse performance by tuning SQL queries and resource utilization, reducing dashboard latency by 30% and enabling faster business insights.',
+                    'Implemented monitoring and performance tracking for deployed models to ensure stability, accuracy, and continuous improvement.',
+                    'Led the design and analysis of A/B experiments (Bayesian and frequentist) to optimize marketing campaigns, resulting in improved engagement and conversion rates.'
                 ]
             },
             {
-                role: 'Business Intelligence Analyst',
-                company: 'High Radius',
+                role: 'Data Systems Analyst',
+                company: 'Independent Consultant',
+                date: 'Jun 2023 – May 2024',
+                points: [
+                    'Designed and implemented a distributed data collection platform to ingest high-frequency IoT sensor data from 50+ edge devices, enabling real-time monitoring and analytics.',
+                    'Built Python-based automation and monitoring solutions to improve system reliability and maintain 99.9% uptime across distributed environments.',
+                    'Developed real-time dashboards using Python, SQL, and Grafana to track system performance, detect anomalies, and support operational decision-making.',
+                    'Optimized data ingestion pipelines and network protocols (TCP/IP, MQTT), reducing system latency by 20% and improving data transfer efficiency.'
+                ]
+            },
+            {
+                role: 'Data Scientist & BI Engineer',
+                company: 'HighRadius',
                 date: 'Jan 2021 – Dec 2022',
                 points: [
-                    'Designed and developed interactive dashboards using Power BI and Tableau, monitoring key performance indicators (KPIs) such as Days Sales Outstanding (DSO) and Cash Conversion Cycle (CCC), which reduced reporting time by 30% and significantly improved business visibility for stakeholders.',
-                    'Optimized ERP-based SQL data models sourced from SAP and Oracle systems, resulting in a 20% improvement in collections efficiency and a measurable reduction in credit risk exposure.',
-                    'Implemented predictive analytics models in Python to forecast blocked orders, leading to a 15% reduction in overdue payments and strengthening cash flow predictability.',
-                    'Automated recurring reporting processes utilizing Alteryx and Excel macros, streamlining month-end close activities and saving over 10 hours weekly in manual effort.',
-                    'Partnered cross-functionally with finance and sales teams to translate complex business requirements into actionable BI insights, thereby enhancing Order-to-Cash operations and overall decision-making effectiveness.'
+                    'Developed and deployed machine learning models for order-to-cash optimization, achieving 92% accuracy in blocked-order forecasting and improving financial operations efficiency.',
+                    'Built and maintained ETL pipelines using SQL and Alteryx to integrate data from Oracle, SAP, and NetSuite, reducing reporting turnaround time by 30%.',
+                    'Designed and delivered Tableau dashboards for key financial metrics (DSO, CEI), automating reporting workflows and saving 10+ hours per week.',
+                    'Built predictive models in Python for sales forecasting, cash flow analysis, and credit risk assessment, enabling more accurate financial planning.'
                 ]
             }
         ],
         projects: [
+            {
+                title: 'Retail Sales Analytics Pipeline',
+                description: 'An end-to-end data pipeline that ingests, cleans, and transforms retail transaction data into an analytics-ready Star Schema. Features automated ETL workflows and SQL-based business intelligence readiness.',
+                tools: ['Python', 'SQL', 'Pandas', 'Star Schema', 'ETL'],
+                url: 'https://github.com/VamshiSunnam/retail-data-pipeline'
+            },
+            {
+                title: 'Real-time Sentiment Analysis Pipeline',
+                description: 'Built a real-time sentiment analysis pipeline using Kafka and Spark Streaming, achieving 85% classification accuracy on social media data for brand monitoring.',
+                tools: ['Kafka', 'Spark Streaming', 'Python', 'NLP'],
+                url: 'https://github.com/VamshiSunnam/real-time-sentiment-analysis'
+            },
+            {
+                title: 'Supply Chain Demand Forecaster',
+                description: 'Developed a time-series forecasting model using Prophet to optimize inventory planning and reduce stock-outs by 12%.',
+                tools: ['Python', 'Prophet', 'Time-Series', 'Forecasting'],
+                url: 'https://github.com/VamshiSunnam/supply-chain-forecaster'
+            },
             {
                 title: 'Credit Card Fraud Detection',
                 description: 'Developed a machine learning model to detect fraudulent credit card transactions with high accuracy, utilizing various classification algorithms and feature engineering techniques.',
@@ -48,15 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         ],
         skills: {
-            "Programming & Scripting": ["Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras)", "Java", "SQL (PostgreSQL, MySQL, Oracle)", "PySpark", "Shell Scripting"],
-            "Data Engineering & ETL": ["Apache Airflow", "Azure Data Factory (ADF)", "Databricks", "AWS Glue", "dbt", "ETL/ELT", "Data Warehousing", "Data Lake", "Data Streaming"],
-            "Cloud Platforms": ["AWS (S3, Redshift, EC2, Lambda, SageMaker, Glue)", "Azure (ADF, Synapse Analytics, Blob Storage, Data Lake Storage)", "GCP (BigQuery, Dataproc)"],
-            "Databases & Storage": ["Snowflake", "PostgreSQL", "MySQL", "Oracle", "MongoDB", "DynamoDB"],
-            "Big Data Technologies": ["Apache Spark", "Apache Kafka", "Hadoop"],
-            "Machine Learning & AI": ["Predictive Analytics", "Time Series Forecasting", "LLM Operations", "MLOps", "Feature Engineering", "Model Evaluation"],
-            "DevOps & Infrastructure": ["Docker", "Kubernetes", "Terraform", "CI/CD (GitHub Actions, Jenkins)", "Git"],
-            "Business Intelligence & Visualization": ["Power BI", "Tableau", "Microsoft Excel (Advanced Functions, PivotTables, Charts)"],
-            "Concepts": ["Data Modeling (Dimensional, Relational)", "Query Optimization", "Automation", "Data Integrity", "Agile/Scrum Methodologies"]
+            "Programming & Scripting": ["Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras)", "SQL (PostgreSQL, MySQL, Snowflake)", "R", "Bash", "PySpark"],
+            "Data Engineering & ETL": ["Apache Airflow", "Databricks", "Apache Kafka", "ETL/ELT", "Data Warehousing", "Batch & Real-Time Pipelines", "Spark Streaming"],
+            "Cloud Platforms": ["AWS (S3, Redshift, EC2, Lambda, SageMaker, Glue, Kinesis)", "Azure (Databricks, ML Services)"],
+            "Machine Learning & AI": ["Predictive Modeling", "Classification", "Regression", "NLP", "Time-Series Forecasting", "A/B Testing", "Recommendation Systems", "Feature Engineering"],
+            "Databases & Storage": ["Snowflake", "PostgreSQL", "MySQL", "MongoDB", "Redshift"],
+            "Business Intelligence & Visualization": ["Tableau", "Power BI", "Plotly", "Grafana"],
+            "DevOps & MLOps": ["Docker", "Kubernetes", "CI/CD", "Git", "Model Monitoring"]
         }
     };
 
@@ -67,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     new Typed('#typing-animation', {
-        strings: ['AI Solutions.', 'ML Pipelines.', 'Predictive Models.', 'Intelligent Systems.'],
+        strings: ['Data Science Solutions.', 'Scalable Data Pipelines.', 'Predictive Analytics.', 'Cloud-Based Insights.'],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
